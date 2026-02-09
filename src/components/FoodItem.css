@@ -1,0 +1,72 @@
+.food-item {
+    display: flex;
+    flex-direction: column;
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.food-item.expiring {
+    border-color: var(--warning);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.food-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.food-icon {
+    font-size: 2rem;
+}
+
+.food-item-content {
+    flex: 1;
+    margin-bottom: var(--spacing-md);
+}
+
+.food-item-content h4 {
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-primary);
+    font-size: 1.125rem;
+}
+
+.food-item-content p {
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+.quantity {
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.days-remaining {
+    margin-top: var(--spacing-sm);
+    font-weight: 600;
+    color: var(--primary-light);
+    font-size: 0.875rem;
+}
+
+.food-item-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.btn-small {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.875rem;
+    flex: 1;
+}
+
+.food-item:hover {
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .food-item-actions {
+        flex-direction: column;
+    }
+}

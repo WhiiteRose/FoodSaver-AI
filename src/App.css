@@ -1,0 +1,9 @@
+.app {
+    min-height: 100vh;
+    padding-bottom: var(--spacing-2xl);
+}
+
+main {
+    margin-top: var(--spacing-xl);
+    padding-bottom: var(--spacing-2xl);
+}
