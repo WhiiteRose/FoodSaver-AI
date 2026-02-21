@@ -16,6 +16,24 @@ FoodSaver AI helps households reduce food waste through three intelligent featur
 - **🤖 AI Recipe Generator**: Get personalized recipes using ingredients about to spoil
 - **📊 Impact Dashboard**: Visualize your environmental impact with real-time metrics
 
+## 📸 Screenshots
+
+### 🥗 Smart Pantry Tracker
+
+![Smart Pantry Tracker](public/screenshots/food.PNG)
+
+### 🤖 AI Recipe Generator
+
+![AI Recipe Generator](public/screenshots/ai%20recipes.PNG)
+
+### 📖 Recipes
+
+![Recipes](public/screenshots/recipes.PNG)
+
+### 📊 Impact Dashboard
+
+![Impact Dashboard](public/screenshots/Impact.PNG)
+
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -28,20 +46,20 @@ FoodSaver AI helps households reduce food waste through three intelligent featur
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/FoodSaver-AI.git
+git clone https://github.com/WhiiteRose/FoodSaver-AI.git
 cd FoodSaver-AI
 
 # Install dependencies
 npm install
 
 # Create .env file with your OpenAI API key
-echo "REACT_APP_OPENAI_API_KEY=your_api_key_here" > .env
+echo "VITE_OPENAI_API_KEY=your_api_key_here" > .env
 
 # Start the development server
-npm start
+npm run dev
 ```
 
-The app will open at [http://localhost:3000](http://localhost:3000)
+The app will open at [http://localhost:5173](http://localhost:5173)
 
 ## 🛠️ Built With
 
@@ -54,6 +72,7 @@ The app will open at [http://localhost:3000](http://localhost:3000)
 ## 🌍 Environmental Impact
 
 If just 10,000 households reduce food waste by 30%, we could prevent:
+
 - **1,500 tons** of annual food waste
 - Equivalent to removing **500 cars** from the road for a year
 - Conservation of thousands of gallons of water
@@ -61,18 +80,21 @@ If just 10,000 households reduce food waste by 30%, we could prevent:
 ## 📝 Features
 
 ### Smart Pantry Tracker
+
 - Add food items with expiration dates
 - Categorize items (produce, dairy, meat, etc.)
 - Get notifications for expiring items
 - Quick-add common foods
 
 ### AI Recipe Generator
+
 - Generate recipes based on expiring ingredients
 - Dietary preference support
 - Save favorite recipes
 - Share recipes with friends
 
 ### Impact Dashboard
+
 - Track food saved (pounds)
 - CO2 emissions prevented
 - Water conserved
