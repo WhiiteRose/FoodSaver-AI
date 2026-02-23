@@ -62,7 +62,8 @@ jobs:
           echo "url=$url" >> "$GITHUB_OUTPUT"
 
       - name: Write preview URL to summary
-        run: echo "Preview URL: ${{ steps.deploy_preview.outputs.url }}" >> "$GITHUB_STEP_SUMMARY"
+        run: |
+          echo "Preview URL: ${{ steps.deploy_preview.outputs.url }}" >> "$GITHUB_STEP_SUMMARY"
 
   production:
     name: Vercel Production
@@ -106,4 +107,5 @@ jobs:
           echo "url=$url" >> "$GITHUB_OUTPUT"
 
       - name: Write production URL to summary
-        run: echo "Production URL: ${{ steps.deploy_prod.outputs.url }}" >> "$GITHUB_STEP_SUMMARY"
+        run: |
+          echo "Production URL: ${{ steps.deploy_prod.outputs.url }}" >> "$GITHUB_STEP_SUMMARY"
