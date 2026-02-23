@@ -6,7 +6,7 @@
 
 ## 🎯 The Problem
 
-Every year, households waste **40% of purchased food**, contributing to 8-10% of global greenhouse gas emissions. If food waste were a country, it would be the third-largest emitter of greenhouse gases globally.
+Every year, households waste **40% of purchased food**, contributing to 8-10% of global greenhouse gas emissions. If food waste were a country, it would be the third-largest emitter of greenhouse gases globally..
 
 ## 💡 Our Solution
 
@@ -60,6 +60,34 @@ npm run dev
 ```
 
 The app will open at [http://localhost:5173](http://localhost:5173)
+
+## ⚙️ CI/CD (GitHub Actions)
+
+This repository now includes:
+
+- **CI**: `.github/workflows/ci.yml`
+  - Runs on `push` and `pull_request`
+  - Installs dependencies and builds the app
+- **CD Vercel**: `.github/workflows/deploy-vercel.yml`
+  - Preview deploys on Pull Requests
+  - Production deploy on the default branch (`main` or `master`)
+
+### Vercel setup
+
+Add these repository secrets in GitHub (`Settings > Secrets and variables > Actions`):
+
+- `VERCEL_TOKEN`
+- `VERCEL_ORG_ID`
+- `VERCEL_PROJECT_ID`
+
+How to get IDs quickly:
+
+```bash
+npx vercel link
+cat .vercel/project.json
+```
+
+Then push to trigger deployment.
 
 ## 🛠️ Built With
 
