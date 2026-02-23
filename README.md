@@ -6,7 +6,7 @@
 
 ## 🎯 The Problem
 
-Every year, households waste **40% of purchased food**, contributing to 8-10% of global greenhouse gas emissions. If food waste were a country, it would be the third-largest emitter of greenhouse gases globally.
+Every year, households waste **40% of purchased food**, contributing to 8-10% of global greenhouse gas emissions. If food waste were a country, it would be the third-largest emitter of greenhouse gases globally..
 
 ## 💡 Our Solution
 
