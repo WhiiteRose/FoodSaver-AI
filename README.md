@@ -65,6 +65,26 @@ npm run dev
 
 The app will open at [http://localhost:5173](http://localhost:5173)
 
+### Docker (Production)
+
+```bash
+# Build and run
+docker compose up --build -d
+
+# Open the app
+http://localhost:8080
+
+# Stop containers
+docker compose down
+```
+
+You can also run without Compose:
+
+```bash
+docker build -t foodsaver-ai .
+docker run --rm -p 8080:80 foodsaver-ai
+```
+
 ## ⚙️ CI/CD (GitHub Actions)
 
 This repository now includes:
