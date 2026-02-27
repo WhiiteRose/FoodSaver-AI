@@ -9,6 +9,7 @@ function AddFoodForm({ onSubmit, onCancel }) {
         expiryDate: ''
     })
 
+    // Each category includes a default shelf life used to suggest an expiry date.
     const categories = [
         { value: 'produce', label: '🥬 Produce', shelfLife: 7 },
         { value: 'dairy', label: '🥛 Dairy', shelfLife: 14 },
@@ -23,7 +24,7 @@ function AddFoodForm({ onSubmit, onCancel }) {
         const { name, value } = e.target
         setFormData(prev => ({ ...prev, [name]: value }))
 
-        // Auto-calculate expiry date when category changes
+        // Suggest an expiry date only when the user has not set one manually yet.
         if (name === 'category' && !formData.expiryDate) {
             const selectedCategory = categories.find(cat => cat.value === value)
             if (selectedCategory) {
@@ -39,6 +40,7 @@ function AddFoodForm({ onSubmit, onCancel }) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        // Keep validation lightweight: only required fields gate submission.
         if (formData.name && formData.expiryDate) {
             onSubmit(formData)
             setFormData({ name: '', category: 'produce', quantity: '', expiryDate: '' })

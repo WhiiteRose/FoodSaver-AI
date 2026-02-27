@@ -7,6 +7,7 @@ import RecipeGenerator from './components/RecipeGenerator'
 import ImpactDashboard from './components/ImpactDashboard'
 
 function App() {
+    // Central app state shared across the three main views.
     const [currentView, setCurrentView] = useState('pantry')
     const [foodItems, setFoodItems] = useState([])
     const [stats, setStats] = useState({
@@ -16,6 +17,7 @@ function App() {
         moneySaved: 0
     })
 
+    // Only one feature view is rendered at a time, but all reuse the same data.
     return (
         <div className="app">
             <Header />

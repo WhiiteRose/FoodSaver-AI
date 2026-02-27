@@ -3,6 +3,7 @@ import './FoodItem.css'
 
 function FoodItem({ item, onDelete, onConsume, daysUntilExpiry }) {
     const getCategoryIcon = (category) => {
+        // Keep category-to-icon mapping in one place for consistent visuals.
         const icons = {
             produce: '🥬',
             dairy: '🥛',
@@ -16,6 +17,7 @@ function FoodItem({ item, onDelete, onConsume, daysUntilExpiry }) {
     }
 
     const getStatusBadge = () => {
+        // Badge priority is based on urgency to consume the item.
         if (daysUntilExpiry < 0) {
             return <span className="badge badge-danger">Expired</span>
         } else if (daysUntilExpiry <= 3) {
@@ -28,11 +30,13 @@ function FoodItem({ item, onDelete, onConsume, daysUntilExpiry }) {
     }
 
     const formatDate = (dateString) => {
+        // Display dates with a short US-friendly format used across the UI.
         const date = new Date(dateString)
         return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
     }
 
     return (
+        // Highlight items that are already expired or close to expiry.
         <div className={`food-item card ${daysUntilExpiry <= 3 ? 'expiring' : ''}`}>
             <div className="food-item-header">
                 <span className="food-icon">{getCategoryIcon(item.category)}</span>

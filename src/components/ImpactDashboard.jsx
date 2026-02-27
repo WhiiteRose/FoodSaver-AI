@@ -4,6 +4,7 @@ import StatCard from './StatCard'
 import ProgressChart from './ProgressChart'
 
 function ImpactDashboard({ stats, foodItems }) {
+    // Achievement rules are computed from current pantry and impact metrics.
     const achievements = [
         {
             id: 1,
@@ -35,6 +36,7 @@ function ImpactDashboard({ stats, foodItems }) {
         }
     ]
 
+    // Precompute dashboard aggregates to keep JSX simple and readable.
     const unlockedAchievements = achievements.filter(a => a.unlocked)
     const totalItems = foodItems.length
     const savedItems = foodItems.filter(i => i.consumed).length

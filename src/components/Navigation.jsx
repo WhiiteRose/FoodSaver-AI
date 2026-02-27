@@ -2,6 +2,7 @@ import React from 'react'
 import './Navigation.css'
 
 function Navigation({ currentView, setCurrentView }) {
+    // View tabs are configuration-driven to avoid duplicated button markup.
     const navItems = [
         { id: 'pantry', label: 'Pantry Tracker', icon: '🥗' },
         { id: 'recipes', label: 'AI Recipes', icon: '🤖' },
@@ -16,6 +17,7 @@ function Navigation({ currentView, setCurrentView }) {
                         <button
                             key={item.id}
                             className={`nav-item ${currentView === item.id ? 'active' : ''}`}
+                            // Delegate view changes to the parent so state stays centralized.
                             onClick={() => setCurrentView(item.id)}
                         >
                             <span className="nav-icon">{item.icon}</span>

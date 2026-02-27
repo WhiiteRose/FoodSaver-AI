@@ -2,6 +2,7 @@ import React from 'react'
 import './ProgressChart.css'
 
 function ProgressChart({ totalItems, savedItems, wasteRate }) {
+    // Guard against division by zero when the user has no tracked items yet.
     const savedRate = totalItems > 0 ? ((savedItems / totalItems) * 100).toFixed(0) : 0
 
     return (

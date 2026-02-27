@@ -23,6 +23,7 @@ function RecipeGenerator({ foodItems }) {
     const activeItems = foodItems.filter(item => !item.consumed)
 
     const toggleItemSelection = (itemId) => {
+        // Toggle checkbox selection while preserving existing choices.
         setSelectedItems(prev =>
             prev.includes(itemId)
                 ? prev.filter(id => id !== itemId)
@@ -39,6 +40,7 @@ function RecipeGenerator({ foodItems }) {
         setLoading(true)
         setError(null)
 
+        // Convert selected IDs to ingredient names expected by the generator.
         const ingredients = selectedItems.map(id => {
             const item = foodItems.find(i => i.id === id)
             return item.name
@@ -61,6 +63,7 @@ function RecipeGenerator({ foodItems }) {
     }
 
     const generateMockRecipe = (ingredients) => {
+        // Mock output keeps the UI flow testable before wiring a real API call.
         const recipes = {
             default: {
                 title: `Delicious ${ingredients[0]} Delight`,

@@ -7,6 +7,7 @@ function StatCard({ icon, value, unit, label, color }) {
             <div className="stat-icon">{icon}</div>
             <div className="stat-content">
                 <div className="stat-value">
+                    {/* Currency is displayed as a prefix, while other units are suffixes. */}
                     {unit === '$' && unit}
                     {value}
                     {unit !== '$' && <span className="stat-unit">{unit}</span>}

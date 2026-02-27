@@ -34,6 +34,7 @@ function PantryTracker({ foodItems, setFoodItems, setStats }) {
     }
 
     const addFoodItem = (item) => {
+        // Add metadata needed for tracking and stable React keys.
         const newItem = {
             id: Date.now(),
             ...item,
@@ -49,12 +50,14 @@ function PantryTracker({ foodItems, setFoodItems, setStats }) {
     }
 
     const markAsConsumed = (id) => {
+        // Marking as consumed keeps the item in history for impact calculations.
         setFoodItems(foodItems.map(item =>
             item.id === id ? { ...item, consumed: true } : item
         ))
     }
 
     const getDaysUntilExpiry = (expiryDate) => {
+        // Round up so partial days still count as one full day remaining.
         const today = new Date()
         const expiry = new Date(expiryDate)
         const diffTime = expiry - today
@@ -63,6 +66,7 @@ function PantryTracker({ foodItems, setFoodItems, setStats }) {
     }
 
     const getExpiringItems = () => {
+        // "Expiring soon" means non-consumed items within the next 3 days.
         return foodItems.filter(item => {
             if (item.consumed) return false
             const days = getDaysUntilExpiry(item.expiryDate)
